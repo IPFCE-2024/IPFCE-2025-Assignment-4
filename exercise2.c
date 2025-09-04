@@ -1,3 +1,5 @@
+#include <assert.h>
+
 /*
  * Returns the smallest of the first n values in list
  * Pre: n>0, list[0...n-1] is defined
