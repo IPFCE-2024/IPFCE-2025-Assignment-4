@@ -21,7 +21,7 @@ jobs:
       id: exercise2-test
       with:
         test-name: Exercise 2 Get Min
-        command: gcc -o tests/test_exercise2 tests/test_exercise2.c && ./tests/test_exercise2 > test_output_exercise2.txt 2>&1 && echo "Exercise 2 tests passed"
+        command: gcc -o tests/test_exercise2 tests/test_exercise2.c exercise2.c && ./tests/test_exercise2 > test_output_exercise2.txt 2>&1 && echo "Exercise 2 tests passed"
         expected-output: Exercise 2 tests passed
         comparison-method: contains
         timeout: 10
@@ -32,7 +32,7 @@ jobs:
       id: exercise4-test
       with:
         test-name: Exercise 4 Reverse Array
-        command: gcc -o tests/test_exercise4 tests/test_exercise4.c && ./tests/test_exercise4 > test_output_exercise4.txt 2>&1 && echo "Exercise 4 tests passed"
+        command: gcc -o tests/test_exercise4 tests/test_exercise4.c exercise4.c && ./tests/test_exercise4 > test_output_exercise4.txt 2>&1 && echo "Exercise 4 tests passed"
         expected-output: Exercise 4 tests passed
         comparison-method: contains
         timeout: 10
@@ -43,7 +43,7 @@ jobs:
       id: exercise5-test
       with:
         test-name: Exercise 5 Longest Sequence
-        command: gcc -o tests/test_exercise5 tests/test_exercise5.c && ./tests/test_exercise5 > test_output_exercise5.txt 2>&1 && echo "Exercise 5 tests passed"
+        command: gcc -o tests/test_exercise5 tests/test_exercise5.c exercise5.c && ./tests/test_exercise5 > test_output_exercise5.txt 2>&1 && echo "Exercise 5 tests passed"
         expected-output: Exercise 5 tests passed
         comparison-method: contains
         timeout: 10
@@ -54,7 +54,7 @@ jobs:
       id: exercise6-test
       with:
         test-name: Exercise 6 Count Array
-        command: gcc -o tests/test_exercise6 tests/test_exercise6.c && ./tests/test_exercise6 > test_output_exercise6.txt 2>&1 && echo "Exercise 6 tests passed"
+        command: gcc -o tests/test_exercise6 tests/test_exercise6.c exercise6.c && ./tests/test_exercise6 > test_output_exercise6.txt 2>&1 && echo "Exercise 6 tests passed"
         expected-output: Exercise 6 tests passed
         comparison-method: contains
         timeout: 10
@@ -65,7 +65,7 @@ jobs:
       id: exercise7-test
       with:
         test-name: Exercise 7 Average
-        command: gcc -o tests/test_exercise7 tests/test_exercise7.c && ./tests/test_exercise7 > test_output_exercise7.txt 2>&1 && echo "Exercise 7 tests passed"
+        command: gcc -o tests/test_exercise7 tests/test_exercise7.c exercise7.c && ./tests/test_exercise7 > test_output_exercise7.txt 2>&1 && echo "Exercise 7 tests passed"
         expected-output: Exercise 7 tests passed
         comparison-method: contains
         timeout: 10
@@ -76,7 +76,7 @@ jobs:
       id: exercise8-test
       with:
         test-name: Exercise 8 Average
-        command: gcc -o tests/test_exercise8 tests/test_exercise8.c && ./tests/test_exercise8 > test_output_exercise8.txt 2>&1 && echo "Exercise 8 tests passed"
+        command: gcc -o tests/test_exercise8 tests/test_exercise8.c exercise8.c && ./tests/test_exercise8 > test_output_exercise8.txt 2>&1 && echo "Exercise 8 tests passed"
         expected-output: Exercise 8 tests passed
         comparison-method: contains
         timeout: 10
