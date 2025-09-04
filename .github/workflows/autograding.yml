@@ -1,0 +1,94 @@
+name: Autograding Tests
+on:
+  push:
+  workflow_dispatch:
+  repository_dispatch:
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    # Exercise 2 - Get Min Function
+    - name: Exercise 2 - Get Min Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise2-test
+      with:
+        test-name: Exercise 2 Get Min
+        command: gcc -o tests/test_exercise2 tests/test_exercise2.c && ./tests/test_exercise2 > test_output_exercise2.txt 2>&1 && echo "Exercise 2 tests passed"
+        expected-output: Exercise 2 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    # Exercise 4 - Reverse Array Function
+    - name: Exercise 4 - Reverse Array Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise4-test
+      with:
+        test-name: Exercise 4 Reverse Array
+        command: gcc -o tests/test_exercise4 tests/test_exercise4.c && ./tests/test_exercise4 > test_output_exercise4.txt 2>&1 && echo "Exercise 4 tests passed"
+        expected-output: Exercise 4 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    # Exercise 5 - Longest Sequence Function
+    - name: Exercise 5 - Longest Sequence Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise5-test
+      with:
+        test-name: Exercise 5 Longest Sequence
+        command: gcc -o tests/test_exercise5 tests/test_exercise5.c && ./tests/test_exercise5 > test_output_exercise5.txt 2>&1 && echo "Exercise 5 tests passed"
+        expected-output: Exercise 5 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    # Exercise 6 - Count Array Function
+    - name: Exercise 6 - Count Array Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise6-test
+      with:
+        test-name: Exercise 6 Count Array
+        command: gcc -o tests/test_exercise6 tests/test_exercise6.c && ./tests/test_exercise6 > test_output_exercise6.txt 2>&1 && echo "Exercise 6 tests passed"
+        expected-output: Exercise 6 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    # Exercise 7 - Average Function
+    - name: Exercise 7 - Average Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise7-test
+      with:
+        test-name: Exercise 7 Average
+        command: gcc -o tests/test_exercise7 tests/test_exercise7.c && ./tests/test_exercise7 > test_output_exercise7.txt 2>&1 && echo "Exercise 7 tests passed"
+        expected-output: Exercise 7 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    # Exercise 8 - Average Function (Alternative)
+    - name: Exercise 8 - Average Function
+      uses: classroom-resources/autograding-io-grader@v1
+      id: exercise8-test
+      with:
+        test-name: Exercise 8 Average
+        command: gcc -o tests/test_exercise8 tests/test_exercise8.c && ./tests/test_exercise8 > test_output_exercise8.txt 2>&1 && echo "Exercise 8 tests passed"
+        expected-output: Exercise 8 tests passed
+        comparison-method: contains
+        timeout: 10
+        
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EXERCISE2-TEST_RESULTS: "${{ steps.exercise2-test.outputs.result }}"
+        EXERCISE4-TEST_RESULTS: "${{ steps.exercise4-test.outputs.result }}"
+        EXERCISE5-TEST_RESULTS: "${{ steps.exercise5-test.outputs.result }}"
+        EXERCISE6-TEST_RESULTS: "${{ steps.exercise6-test.outputs.result }}"
+        EXERCISE7-TEST_RESULTS: "${{ steps.exercise7-test.outputs.result }}"
+        EXERCISE8-TEST_RESULTS: "${{ steps.exercise8-test.outputs.result }}"
+      with:
+        runners: exercise2-test,exercise4-test,exercise5-test,exercise6-test,exercise7-test,exercise8-test

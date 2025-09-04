@@ -7,3 +7,4 @@ int get_min(int list[], int n)
     assert(n > 0);
     //...
 }
+
