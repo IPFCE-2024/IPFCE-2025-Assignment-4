@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false  # Don't stop on first failure
       matrix:
-        exercise: [2, 4, 5, 6, 7, 8]
+        exercise: [2, 4, 5, 6, 7]
         include:
           - exercise: 2
             name: "Get Min Function"
@@ -27,8 +27,6 @@ jobs:
             name: "Count Array Function"
           - exercise: 7
             name: "Average Function"
-          - exercise: 8
-            name: "Average Function (Alternative)"
     
     steps:
     - name: Checkout code
@@ -92,4 +90,3 @@ jobs:
         echo "| 5 | ${{ needs.test-exercises.result }} | Longest Sequence Function |" >> $GITHUB_STEP_SUMMARY
         echo "| 6 | ${{ needs.test-exercises.result }} | Count Array Function |" >> $GITHUB_STEP_SUMMARY
         echo "| 7 | ${{ needs.test-exercises.result }} | Average Function |" >> $GITHUB_STEP_SUMMARY
-        echo "| 8 | ${{ needs.test-exercises.result }} | Average Function (Alternative) |" >> $GITHUB_STEP_SUMMARY

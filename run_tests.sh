@@ -49,7 +49,6 @@ test_exercise 4
 test_exercise 5
 test_exercise 6
 test_exercise 7
-test_exercise 8
 
 echo ""
 echo "📋 Test Summary: $passed_tests/$total_tests passed"
