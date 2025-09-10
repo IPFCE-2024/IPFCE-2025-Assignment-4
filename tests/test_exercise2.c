@@ -5,7 +5,7 @@
 int get_min(int list[], int n); // Declaration only
 
 // Include the actual implementation from exercise2.c
-#include "../exercise2.c"
+// #include "../exercise2.c"
 
 int main() {
     // Test case 1: Normal array
