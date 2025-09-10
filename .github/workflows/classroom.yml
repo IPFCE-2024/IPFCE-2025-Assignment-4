@@ -46,7 +46,7 @@ jobs:
       
     - name: Run Exercise ${{ matrix.exercise }} Test
       id: test
-      continue-on-error: true
+      continue-on-error: false
       if: steps.compile.outputs.compile_success == '0'
       run: |
         echo "Running Exercise ${{ matrix.exercise }} test..."
