@@ -18,7 +18,7 @@ test_exercise() {
     total_tests=$((total_tests + 1))
     
     # Try to compile the test
-    if gcc -o "tests/test_exercise$exercise_num" "tests/test_exercise$exercise_num.c" 2> "tests/test_output_exercise$exercise_num.txt"; then
+    if gcc -o "tests/test_exercise$exercise_num" "tests/test_exercise$exercise_num.c" "exercise$exercise_num.c" 2> "tests/test_output_exercise$exercise_num.txt"; then
         # Run the test with timeout to prevent hanging
         timeout 10s "./tests/test_exercise$exercise_num" >> "tests/test_output_exercise$exercise_num.txt" 2>&1
         local exit_code=$?

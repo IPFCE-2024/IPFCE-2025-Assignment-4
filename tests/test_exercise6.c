@@ -6,7 +6,7 @@
 void count_1_to_20(int a[100][150], int count[20]); // Declaration only
 
 // Include the actual implementation from exercise6.c
-#include "../exercise6.c"
+// #include "../exercise6.c"
 
 int main() {
     // Test case: Small example

@@ -5,7 +5,7 @@
 void reverse(int list[], int rev_array[], int n); // Declaration only
 
 // Include the actual implementation from exercise4.c
-#include "../exercise4.c"
+// #include "../exercise4.c"
 
 int main() {
     // Test case 1: Normal array
