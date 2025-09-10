@@ -7,6 +7,15 @@
 int get_min(int list[], int n)
 {
     assert(n > 0);
-    //...
+    
+    int min = list[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (list[i] < min)
+        {
+            min = list[i];
+        }
+    }
+    return min;
 }
 
