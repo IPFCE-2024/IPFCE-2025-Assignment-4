@@ -5,9 +5,6 @@
 // Include the student's implementation
 double average(int list[], int n); // Declaration only
 
-// Include the actual implementation from exercise7.c
-// #include "../exercise7.c"
-
 int main() {
     // Test case 1: Normal array
     int test1[] = {1, 2, 3, 4, 5};

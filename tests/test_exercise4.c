@@ -4,9 +4,6 @@
 // Include the student's implementation
 void reverse(int list[], int rev_array[], int n); // Declaration only
 
-// Include the actual implementation from exercise4.c
-// #include "../exercise4.c"
-
 int main() {
     // Test case 1: Normal array
     int test1[] = {1, 2, 3, 4, 5};

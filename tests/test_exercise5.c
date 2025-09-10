@@ -4,9 +4,6 @@
 // Include the student's implementation
 int longest_seq(int list[], int n); // Declaration only
 
-// Include the actual implementation from exercise5.c
-// #include "../exercise5.c"
-
 int main() {
     // Test case 1: Normal array with zeros
     int test1[] = {1, 0, 0, 0, 1, 0, 0, 1};
