@@ -11,7 +11,6 @@ When you push your code to GitHub, the automated tests will run and check:
 3. **Exercise 5**: Unit tests for the `longest_seq()` function
 4. **Exercise 6**: Unit tests for the `count_1_to_20()` function
 5. **Exercise 7**: Unit tests for the `average()` function
-6. **Exercise 8**: Unit tests for the `average()` function (alternative implementation)
 
 ## Running Tests Locally
 
