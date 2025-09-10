@@ -60,16 +60,7 @@ jobs:
       #   fi
       run: |
         echo "Running Exercise ${{ matrix.exercise }} test..."
-        ./tests/test_exercise${{ matrix.exercise }} 2>&1 | tee test_output_exercise${{ matrix.exercise }}.txt
-        exit_code=${PIPESTATUS[0]}
-        echo "test_success=$exit_code" >> $GITHUB_OUTPUT
-        if [ $exit_code -eq 0 ]; then
-          echo "✅ Exercise ${{ matrix.exercise }} tests passed"
-        else
-          echo "❌ Exercise ${{ matrix.exercise }} tests failed"
-          echo "Test output (also saved to file):"
-          cat test_output_exercise${{ matrix.exercise }}.txt
-        fi
+        ./tests/test_exercise${{ matrix.exercise }}
       
     - name: Verify Exercise ${{ matrix.exercise }} Results
       uses: classroom-resources/autograding-io-grader@v1
