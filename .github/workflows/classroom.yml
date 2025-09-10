@@ -39,7 +39,9 @@ jobs:
       continue-on-error: true
       run: |
         echo "Compiling Exercise ${{ matrix.exercise }}: ${{ matrix.name }}"
-        gcc -o tests/test_exercise${{ matrix.exercise }} tests/test_exercise${{ matrix.exercise }}.c
+        gcc -Wall -Wextra -Werror -o tests/test_exercise${{ matrix.exercise }} \
+          tests/test_exercise${{ matrix.exercise }}.c \
+          exercise${{ matrix.exercise }}.c
         echo "compile_success=$?" >> $GITHUB_OUTPUT
       
     - name: Run Exercise ${{ matrix.exercise }} Test
